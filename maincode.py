@@ -321,6 +321,8 @@ async def help(ctx):
     embed = discord.Embed(color=0x36393E)
     embed.set_author(name='Mr. Robot Help')
     embed.add_field(name=':lock_with_ink_pen: **| Moderation**', value='Kick \n Ban \n Clear \n Mute \n Unmute', inline=True)
+    embed.add_field(name=':timer: **| Time**', value='Timer <time> **Only In Seconds!** \n Ping', inline=True)
+    embed.add_field(name=':tada: **| Fun**', value='Coinflip \n Avatar \n Remind <reminder> \n Gay <user>', inline=True)
     await client.send_message(author, embed=embed)
     
 
