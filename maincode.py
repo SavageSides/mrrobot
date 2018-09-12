@@ -523,61 +523,6 @@ async def coinflip(ctx):
     ]
     embed.add_field(name='Coin-Flip - Command', value=(random.choice(choices)), inline=False)
     await client.say(embed=embed)
-    
-extensions = ['chatfilter']
-
-if __name__ == '__Main__':
-    for extension in extensions:
-        try:
-            client.load_extension(extension)
-        except Exception as error:
-            print('{} cannot be loaded. [{}]'.format(extension, error))
-
-@client.command(pass_context=True)
-async def reload(ctx):
-    if ctx.message.author.id == '481270883701358602':
-            client.unload_extension("chatfilter")
-            client.load_extension("chatfilter")
-            embed=discord.Embed(color=0x36393E)
-            embed.add_field(name='Cogs?', value='I have loaded and unloaded the cogs', inline=True)
-            await client.say(embed=embed)
-
-
-@client.command(pass_context=True)
-async def load(ctx, extension):
-    if ctx.message.author.server_permissions.administrator:
-        try:
-            client.load_extension(extension)
-            print('```Loaded {}```'.format(extension))
-            embed=discord.Embed(color=0x36393E)
-            embed.add_field(name='Cogs?', value='I have loaded {}'.format(extension), inline=True)
-            await client.say(embed=embed)
-        except Exception as error:
-            print('{} cannot be loaded. [{}]'.format(extension, error))
-            await client.say('```{} cannot be loaded. [{}]``'.format(extension, error))
-    else:
-        embed = discord.Embed(color=0xff0000)
-        embed.add_field(name=':interrobang: **Error**', value='Oops! You cant use this command. Permission Required: ``Administrator``', inline=False)
-        embed.set_footer(text='You cant use this command!')
-        await client.say(embed=embed)
-
-@client.command(pass_context=True)
-async def unload(ctx, extension):
-    if ctx.message.author.server_permissions.administrator:
-        try:
-            client.unload_extension(extension)
-            print('```Unloaded {}'.format(extension))
-            embed=discord.Embed(color=0x36393E)
-            embed.add_field(name='Cogs?', value='I have unloaded {}'.format(extension), inline=True)
-            await client.say(embed=embed)
-        except Exception as error:
-            print('{} cannot be unloaded. [{}]'.format(extension, error))
-        await client.say('```{} cannot be unloaded. [{}]```'.format(extension, error))
-    else:
-        embed = discord.Embed(color=0xff0000)
-        embed.add_field(name=':interrobang: **Error**', value='Oops! You cant use this command. Permission Required: ``Administrator``', inline=False)
-        embed.set_footer(text='You cant use this command!')
-        await client.say(embed=embed)
 
 
 
