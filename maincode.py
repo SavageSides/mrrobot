@@ -321,7 +321,7 @@ async def help(ctx):
     embed = discord.Embed(color=0x36393E)
     embed.set_author(name='Mr. Robot Help')
     embed.add_field(name=':lock_with_ink_pen: **| Moderation**', value='Kick \n Ban \n Clear \n Mute \n Unmute', inline=True)
-    embed.send_message(author, embed=embed)
+    await client.send_message(author, embed=embed)
     
 
 @client.command(pass_context=True)
