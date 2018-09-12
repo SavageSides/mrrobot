@@ -319,31 +319,10 @@ async def avatar(ctx, user: discord.Member = None):
 async def help(ctx):
     author = ctx.message.author
     embed = discord.Embed(color=0x36393E)
-    embed.add_field(name='>ping', value='Sends a message back with your ping in millaseconds', inline=False)
-    embed.add_field(name='>avatar @user', value='Sends an embeded message with the users Profile Picture', inline=False)
-    embed.add_field(name='>roast @user', value='It will say a lame or really funny roast at the user', inline=False)
-    embed.add_field(name='>gay @user', value='This will give him 1 - 100 Percent gay xD', inline=False)
-    embed.add_field(name='>mute @user', value='You cant use this command if there isnt a ``Muted`` role!', inline=False)
-    embed.add_field(name='>unmute @user', value='You will unmute the user, and taking away the ``Muted`` role', inline=False)
-    embed.add_field(name='>kick @user', value='This will kick the user. P.S You cant kick the user if you do not have permissions.', inline=False)
-    embed.add_field(name='>ban @user', value='This will ban the user. P.S You cant ban the user if you do not have permissions.', inline=False)
-    embed.add_field(name='>nick @user <nickname>', value='This will change the users nickname', inline=False)
-    embed.add_field(name='>clear <amount>', value='This will delete the messages you want it to.', inline=False)
-    embed.add_field(name='>div <num> <num>', value='It will divide those 2 numbers, if you do 0 / 0 it will come up as an error.', inline=False)
-    embed.add_field(name='>add <num> <num>', value='This will add the numbers up!', inline=False)
-    embed.add_field(name='>sub <num> <num>', value='This command will subtract the 2 numbers!', inline=False)
-    embed.add_field(name='>mul <num> <num>', value='It will multiply the 2 numbers!', inline=False)
-    embed.add_field(name='>serverinfo', value='This command will show the servers info!', inline=False)
-    embed.add_field(name='>info @user', value='Shows you all of the members info', inline=False)
-    await client.send_message(author, embed=embed)
-    embed = discord.Embed(color=0x36393E)
-    embed.set_author(name='Botinfo - commands')
-    embed.add_field(name='>botinfo', value='Tells you what the bot does and whats the purpose of it!', inline=True)
-    embed.add_field(name='>invite', value='Sends a message with the invite!', inline=True)
-    await client.send_message(author, embed=embed)
-    embed = discord.Embed(color=0x36393E)
-    embed.add_field(name='Check your Direct Messages!', value=':e_mail: ', inline=False)
-    await client.say(embed=embed)
+    embed.set_author(name='Mr. Robot Help')
+    embed.add_field(name=':lock_with_ink_pen: **| Moderation**', value='Kick \n Ban \n Clear \n Mute \n Unmute', inline=True)
+    embed.send_message(author, embed=embed)
+    
 
 @client.command(pass_context=True)
 async def gay(ctx, user: discord.Member = None):
@@ -523,6 +502,9 @@ async def coinflip(ctx):
     ]
     embed.add_field(name='Coin-Flip - Command', value=(random.choice(choices)), inline=False)
     await client.say(embed=embed)
+    
+@client.command(pass_context=True)
+
    
 
 
