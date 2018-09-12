@@ -503,11 +503,7 @@ async def coinflip(ctx):
     embed.add_field(name='Coin-Flip - Command', value=(random.choice(choices)), inline=False)
     await client.say(embed=embed)
     
-@client.command(pass_context=True)
 
-   
-
-
-
+  
 client.run('NDg4ODMxMzQyMjQzNzQxNzQ2.Dnh7Qw.4HYkq3P_lQTQqLTIriCkxhQWb2s')
 
