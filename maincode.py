@@ -326,7 +326,7 @@ async def help(ctx):
     embed.add_field(name=':speech_balloon: **| Core :**', value='Serverinfo \n Info **<user>**', inline=False)
     embed.add_field(name=':bust_in_silhouette: **| Others: **', value='Invite \n Botinfo', inline=True)
     embed = discord.Embed(color=0x36393E)
-    embed.add_filed(name='**You have summoned the help command!', value=':mailbox_with_mail: You have mail please check your Direct Messages!', inline=True)
+    embed.add_field(name='**You have summoned the help command!', value=':mailbox_with_mail: You have mail please check your Direct Messages!', inline=True)
     await client.send_message(author, embed=embed)
     
 
