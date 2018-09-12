@@ -323,7 +323,9 @@ async def help(ctx):
     embed.add_field(name=':lock_with_ink_pen: **| Moderation: **', value='Kick \n Ban \n Clear \n Mute \n Unmute \n Nick', inline=True)
     embed.add_field(name=':timer: **| Time: **', value='Timer <time> **Only In Seconds!** \n Ping', inline=False)
     embed.add_field(name=':tada: **| Fun :**', value='Coinflip \n Avatar \n Remind <reminder> \n Gay <user>', inline=True)
-    embed.add_field(name=':speech_balloon: **| Core :**', value='Botinfo \n Serverinfo \n Info **<user>**', inline=False)
+    embed.add_field(name=':speech_balloon: **| Core :**', value='Serverinfo \n Info **<user>**', inline=False)
+    embed.add_filed(name=':bust_in_silhouette: **| Others: **', value='Invite \n Botinfo', inline=True)
+    await client.add_reaction("489579564268388353")
     await client.send_message(author, embed=embed)
     
 
