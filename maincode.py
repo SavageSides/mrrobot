@@ -331,7 +331,7 @@ async def help(ctx):
     embed.set_footer(text='Reminder: All commands need to be lower case!')
     await client.send_message(author, embed=embed)
     embed = discord.Embed(color=0x36393E)
-    embed.add_fileld(name='We have sent you a message!', value='You have got mail!', inline=False)
+    embed.add_field(name='We have sent you a message!', value='You have got mail!', inline=False)
     await client.say(embed=embed)
     
     
