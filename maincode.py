@@ -321,7 +321,7 @@ async def help(ctx):
     embed = discord.Embed(color=0x36393E)
     embed.set_author(name='Mr. Robot Help!')
     embed.add_field(name=':lock_with_ink_pen: | Moderation :', value='``Kick``,``Ban``,``Clear``,``Mute``,``Unmute``,``Nick``', inline=True)
-    embed.add_field(name=':tada: | Utility & Fun :', value='``Roast``,``Gay``,``Avatar``,``Invite``,``Info``,``Botinfo``,``Serverinfo``,``Die``,``Remind``', inline=False)
+    embed.add_field(name=':tada: | Utility & Fun :', value='``Roast``,``Gay``,``Avatar``,``Roast``,``Invite``,``Info``,``Botinfo``,``Serverinfo``,``Die``,``Remind``', inline=False)
     embed.add_field(name=':timer: | Time & Pinging :', value='``Ping``,``Timer``', inline=True)
     embed.add_field(name=':thinking: | Math & Calculations :', value='``Add``,``Sub``,``Mul``,``Div``', inline=False)
     embed.add_field(name=':warning: | Administration :', value='``Welcome Message``,``Remindsetup``', inline=True)
