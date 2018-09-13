@@ -323,7 +323,7 @@ async def help(ctx):
     embed.add_field(name=':lock_with_ink_pen: | Moderation :', value='``Kick``,``Ban``,``Clear``,``Mute``,``Unmute``,``Nick``', inline=True)
     embed.add_field(name=':tada: | Utility & Fun :', value='``Roast``,``Gay``,``Avatar``,``Invite``,``Info``,``Botinfo``,``Serverinfo``,``Die``,``Remind``', inline=False)
     embed.add_field(name=':timer: | Time & Pinging :', value='``Ping``,``Timer``', inline=True)
-    embed.send_message(author, embed=embed)
+    await client.send_message(author, embed=embed)
     
 
 @client.command(pass_context=True)
