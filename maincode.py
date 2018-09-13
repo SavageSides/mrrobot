@@ -318,7 +318,7 @@ async def avatar(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def help(ctx):
     author = ctx.message.author
-    embed = discord.Embed(color=0x36393E)
+    message = embed = discord.Embed(color=0x36393E)
     embed.set_author(name='Mr. Robot Help')
     embed.add_field(name='**Quick Description**', value='This bot was made with Python 3.6.6 and is hosted on Heroku.com!', inline=False)
     embed.add_field(name=':lock_with_ink_pen: **| Moderation: **', value='Kick \n Ban \n Clear \n Mute \n Unmute \n Nick', inline=True)
