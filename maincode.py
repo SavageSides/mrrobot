@@ -511,6 +511,17 @@ async def coinflip(ctx):
     embed.add_field(name='Coin-Flip - Command', value=(random.choice(choices)), inline=False)
     await client.say(embed=embed)
     
+@client.command(pass_context=True)
+async def roast(ctx, user: discord.Membed = None):
+    roast = [
+        'Is your ass jealous of the amount of shit that just came out of your mouth?',
+        'YO MAMAS so FAT When She asked for a water bed they put a blanket over the ocean!',
+        'Were u born on a highway? Cause thats where most accidents happen',
+        'If u Ran like your mouth u will be in good shape',
+    ]
+    embed.add_field(name='Roasted!', value=(random.choice(roast)), inline=False)
+    await client.say(embed=embed)
+    
     
 
   
