@@ -512,7 +512,7 @@ async def coinflip(ctx):
     await client.say(embed=embed)
     
 @client.command(pass_context=True)
-async def roast(ctx, user: discord.Membed = None):
+async def roast(ctx, user: discord.Member = None):
     roast = [
         'Is your ass jealous of the amount of shit that just came out of your mouth?',
         'YO MAMAS so FAT When She asked for a water bed they put a blanket over the ocean!',
