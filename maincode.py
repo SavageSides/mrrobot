@@ -326,7 +326,6 @@ async def help(ctx):
     embed.add_field(name=':tada: **| Fun :**', value='Coinflip \n Avatar \n Remind <reminder> \n Gay <user>', inline=True)
     embed.add_field(name=':speech_balloon: **| Core :**', value='Serverinfo \n Info **<user>**', inline=False)
     embed.add_field(name=':bust_in_silhouette: **| Others: **', value='Invite \n Botinfo', inline=True)
-    await client.add_reaction(":regional_indicator_r: :regional_indicator_o: :regional_indicator_b: :regional_indicator_o: :regional_indicator_t:")
     await client.send_message(author, embed=embed)
     embed = discord.Embed(color=0x36393E)
     embed.add_field(name='**You have summoned the help command!**', value=':mailbox_with_mail: You have mail please check your Direct Messages!', inline=True)
