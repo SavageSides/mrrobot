@@ -326,6 +326,8 @@ async def help(ctx):
     embed.add_field(name=':thinking: | Math & Calculations :', value='``Add``,``Sub``,``Mul``,``Div``', inline=False)
     embed.add_field(name=':warning: | Administration :', value='``Welcome Message``,``Remindsetup``', inline=True)
     embed.add_field(name=':open_mouth: | Help Server :', value='**__https://discord.gg/Y5FkGb__**', inline=False)
+    embed.add_field(name=':interrobang: | Upcoming Projects :', value='``Gooder Bot``,``Intersteller Bot``', inline=True)
+    embed.add_filed(name=':bust_in_silhouette: | Upcoming Description :', value='**Intersteller Bot will be a galaxy bot! With Moderation and more! **Gooder Bot will be a moderation bot you can invite!**', inline=False)
     embed.set_footer(text='Reminder: All commands need to be lower case!')
     await client.send_message(author, embed=embed)
     embed = discord.Embed(color=0x36393E)
