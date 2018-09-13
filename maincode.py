@@ -318,7 +318,7 @@ async def avatar(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def help(ctx):
     author = ctx.message.author
-    embed = discord.Embed(color=0x36393E)
+    embed = discord.Embed(color=0xff0179)
     embed.set_author(name='Mr. Robot Help!')
     embed.add_field(name=':lock_with_ink_pen: | Moderation :', value='``Kick``,``Ban``,``Clear``,``Mute``,``Unmute``,``Nick``', inline=True)
     embed.add_field(name=':tada: | Utility & Fun :', value='``Roast``,``Gay``,``Avatar``,``Roast``,``Invite``,``Info``,``Botinfo``,``Serverinfo``,``Die``,``Remind``', inline=False)
