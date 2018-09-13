@@ -318,18 +318,12 @@ async def avatar(ctx, user: discord.Member = None):
 @client.command(pass_context=True)
 async def help(ctx):
     author = ctx.message.author
-    message = embed = discord.Embed(color=0x36393E)
-    embed.set_author(name='Mr. Robot Help')
-    embed.add_field(name='**Quick Description**', value='This bot was made with Python 3.6.6 and is hosted on Heroku.com!', inline=False)
-    embed.add_field(name=':lock_with_ink_pen: **| Moderation: **', value='Kick \n Ban \n Clear \n Mute \n Unmute \n Nick', inline=True)
-    embed.add_field(name=':timer: **| Time: **', value='Timer <time> **Only In Seconds!** \n Ping', inline=False)
-    embed.add_field(name=':tada: **| Fun :**', value='Coinflip \n Avatar \n Remind <reminder> \n Gay <user>', inline=True)
-    embed.add_field(name=':speech_balloon: **| Core :**', value='Serverinfo \n Info **<user>**', inline=False)
-    embed.add_field(name=':bust_in_silhouette: **| Others: **', value='Invite \n Botinfo', inline=True)
-    await client.send_message(author, embed=embed)
     embed = discord.Embed(color=0x36393E)
-    embed.add_field(name='**You have summoned the help command!**', value=':mailbox_with_mail: You have mail please check your Direct Messages!', inline=True)
-    await client.say(embed=embed)
+    embed.set_author(name='Mr. Robot Help!')
+    embed.add_field(name=':lock_with_ink_pen: | Moderation :', value='``Kick``,``Ban``,``Clear``,``Mute``,``Unmute``,``Nick``', inline=True)
+    embed.add_field(name=':tada: | Utility & Fun :', value='``Roast``,``Gay``,``Avatar``,``Invite``,``Info``,``Botinfo``,``Serverinfo``,``Die``,``Remind``', inline=False)
+    embed.add_field(name=':timer: | Time & Pinging :', value='``Ping``,``Timer``', inline=True)
+    embed.send_message(author, embed=embed)
     
 
 @client.command(pass_context=True)
