@@ -325,7 +325,7 @@ async def help(ctx):
     embed.add_field(name=':timer: | Time & Pinging :', value='``Ping``,``Timer``', inline=True)
     embed.add_field(name=':thinking: | Math & Calculations :', value='``Add``,``Sub``,``Mul``,``Div``', inline=False)
     embed.add_field(name=':warning: | Administration :', value='``Welcome Message``,``Remindsetup``', inline=True)
-    embed.add_filed(name=':suprised: | Help Server :', value='[https://discord.gg/Y5FkGb](**__Help Server__**)', inline=False)
+    embed.add_field(name=':suprised: | Help Server :', value='[https://discord.gg/Y5FkGb](**__Help Server__**)', inline=False)
     embed.set_footer(text='Reminder: All commands need to be lower case!')
     await client.send_message(author, embed=embed)
     
