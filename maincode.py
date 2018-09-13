@@ -522,6 +522,111 @@ async def roast(ctx, user: discord.Member = None):
     ]
     embed.add_field(name='Roasted!', value=(random.choice(roast)), inline=False)
     await client.say(embed=embed)
+#Gamble Code Please Do Not touch!
+
+@client.event
+async def on_reaction_add(reaction, user):
+    await cleint.process_commands(message)
+    msgid = reaction.message.id
+    try:
+        if reaction.emoji == "🌓" and msgid == gamble_msg_stuff[user.id]["g_msg_id"] and user.id == gamble_msg_stuff[user.id]["g_user_id"]:
+            gamble_msg_stuff[user.id]["g_msg_id"] = None
+            value = gamble_msg_stuff[user.id]["g_value"]
+            user_remove_xp(user.id, value)
+            won_value = value * 10
+
+            win = random.randint(1, 10)
+            if win <= 4:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif 4 <= win <= 8:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif win >= 9:  # 20%
+                await user_add_xp(user.id, won_value)
+                await won_gamble(True, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "{} hat {} xp gewonnen".format(user.name, won_value))
+
+        if reaction.emoji == "🌑" and msgid == gamble_msg_stuff[user.id]["g_msg_id"] and user.id == gamble_msg_stuff[user.id]["g_user_id"]:
+            gamble_msg_stuff[user.id]["g_msg_id"] = None
+            value = gamble_msg_stuff[user.id]["g_value"]
+            user_remove_xp(user.id, value)
+            won_value = value * 2
+
+            win = random.randint(1, 10)
+            if win <= 4:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif 4 <= win <= 8:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif win >= 9:  # 10%
+                # WIN!
+                pass
+
+        if reaction.emoji == "🌕" and msgid == gamble_msg_stuff[user.id]["g_msg_id"] and user.id == gamble_msg_stuff[user.id]["g_user_id"]:
+            gamble_msg_stuff[user.id]["g_msg_id"] = None
+            value = gamble_msg_stuff[user.id]["g_value"]
+            user_remove_xp(user.id, value)
+            won_value = value * 2
+
+            win = random.randint(1, 10)
+            if win <= 4:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif 4 <= win <= 8:  # 40%
+                await won_gamble(False, reaction.message.channel, reaction.emoji)
+                await client.send_message(reaction.message.channel, "Du hast verloren!")
+            elif win >= 9:  # 10%
+                # WIN!
+                pass
+    except KeyError:
+        pass
+
+
+async def won_gamble(won: bool, channel, emoji):
+    if won:
+        embed1 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌕🌕🌓🌑🌑\n🔳🔳🔼🔳🔳")  # 🌕 🌑 🌓
+        embed2 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌕🌓🌑🌑🌕\n🔳🔳🔼🔳🔳")
+        embed3 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌓🌑🌑🌕🌕\n🔳🔳🔼🔳🔳")
+        embed4 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌑🌑🌕🌕{}\n🔳🔳🔼🔳🔳".format(emoji))
+        embed5 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌑🌕🌕{}🌓\n🔳🔳🔼🔳🔳".format(emoji))
+        embed6 = discord.Embed(title="YOU WON!", color=BOTCOLOR, description="🌕🌕{}🌓🌑\n🔳🔳🔼🔳🔳".format(emoji))
+        gamble_msg = await client.send_message(channel, embed=embed1)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed2)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed3)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed4)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed5)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed6)
+    else:
+        loose_emoji = '🌑'
+        if emoji == '🌑':
+            loose_emoji = '🌕'
+
+        embed1 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌕🌕🌓🌑🌑\n🔳🔳🔼🔳🔳")  # 🌕 🌑 🌓
+        embed2 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌕🌓🌑🌑🌕\n🔳🔳🔼🔳🔳")
+        embed3 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌓🌑🌑🌕🌕\n🔳🔳🔼🔳🔳")
+        embed4 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌑🌑🌕🌕{}\n🔳🔳🔼🔳🔳".format(loose_emoji))
+        embed5 = discord.Embed(title="GAMBLE!", color=BOTCOLOR, description="🌑🌕🌕{}🌓\n🔳🔳🔼🔳🔳".format(loose_emoji))
+        embed6 = discord.Embed(title="YOU LOOSE!", color=BOTCOLOR, description="🌕🌕{}🌓🌑\n🔳🔳🔼🔳🔳".format(loose_emoji))
+        gamble_msg = await client.send_message(channel, embed=embed1)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed2)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed3)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed4)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed5)
+        await asyncio.sleep(0.5)
+        await client.edit_message(gamble_msg, embed=embed6)
+    
+
     
     
 
