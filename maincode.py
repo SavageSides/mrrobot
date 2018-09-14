@@ -337,7 +337,7 @@ async def help(ctx):
 @client.command()
 async def web():
     embed = discord.Embed(color)
-    embed.add_field(name='Veiw My bots website now!', value='There is a desription and everything!'. inline=False)
+    embed.add_field(name='Veiw My bots website now!', value='There is a desription and everything!', inline=False)
     embed.title = '**__Robot Website!__**'
     embed.url = 'https://gsavage664.wixsite.com/robot'
     await client.say(embed=embed)
