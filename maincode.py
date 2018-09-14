@@ -218,9 +218,7 @@ async def timer(ctx, time=None):
 @client.command()
 async def invite():
     embed = discord.Embed(color=0x0cf0f0)
-    embed.title = '__Mr. Robotist Link__'
-    embed.url = 'https://discordapp.com/api/oauth2/authorize?client_id=488831342243741746&permissions=8&scope=bot'
-    embed.set_footer(text='More commands coming!')
+    embed.add_field(name="[hi](https://discordapp.com/oauth2/authorize?client_id=489935383128309770&permissions=8&scope=bot)", value="** **")
     await client.say(embed=embed)
 
 @client.command()
