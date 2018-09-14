@@ -28,7 +28,7 @@ async def kick(ctx, user: discord.Member = None, *, reason=None):
             embed.add_field(name='Reason:', value='{0}'.format(reason), inline=True)
             embed.add_field(name='Author:', value='``{}``'.format(author.name), inline=False)
             embed.set_thumbnail(url=user.avatar_url)
-            embed.set_footer(text="user_avatar.url")
+            embed.set_footer(text=user_avatar.url)
             await client.send_message(user, embed=embed)
             await client.kick(user)
             #Sends the user a message when he is kicked!
@@ -38,7 +38,7 @@ async def kick(ctx, user: discord.Member = None, *, reason=None):
             embed.add_field(name='Reason:', value='**{0}**'.format(reason), inline=True)
             embed.add_field(name='Author:', value='**{}**'.format(author.name), inline=False)
             embed.set_thumbnail(url=user.avatar_url)
-            embed.set_footer(text="user_avatar.url")
+            embed.set_footer(text=user_avatar.url)
             await client.say(embed=embed)
     else:
         embed = discord.Embed(color=0xff0000)
