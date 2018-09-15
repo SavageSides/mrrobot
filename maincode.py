@@ -215,8 +215,8 @@ async def timer(ctx, time=None):
     embed.set_footer(text='I love you.')
     await client.say(embed=embed)
 
-@client.command()
-async def invite():
+@client.command(Pass_context=True)
+async def invite(ctx):
     embed = discord.Embed(color=0x0cf0f0)
     embed.add_field(name="Invite", value="[hi](https://discordapp.com/oauth2/authorize?client_id=489935383128309770&permissions=8&scope=bot)")
     await client.say(embed=embed)
